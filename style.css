@@ -1,0 +1,39 @@
+/* GENERAL */
+:root{
+    --purple:#9356DC;
+    --pink:#FF79DA;
+    --cyan:#99E2D0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo{
+    font-family: 'Shrikhand', cursive;/* Logo + titre footer */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    max-width: 1200px;
+    margin:auto;
+}
+
+a{
+    color:inherit;
+
+    text-decoration: none;
+}
+
+/* BARRE DE NAVIGATION */
+
+
+
+
+/* FOOTER */
+footer li{
+    list-style: none;
+}
