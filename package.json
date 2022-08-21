@@ -1,7 +1,7 @@
 {
   "name": "oc_ohmyfood",
   "version": "1.0.0",
-  "description": "OC_P3_Ohmyfood",
+  "description": "OC_Projet 3_Ohmyfood",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
