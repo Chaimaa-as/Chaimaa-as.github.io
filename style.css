@@ -1,4 +1,9 @@
 /* GENERAL */
+*{
+    box-sizing: border-box;
+}
+
+
 :root{
     --purple:#9356DC;
     --pink:#FF79DA;
@@ -9,7 +14,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-#logo{
+h1{
     font-family: 'Shrikhand', cursive;/* Logo + titre footer */
 }
 
@@ -28,8 +33,13 @@ a{
     text-decoration: none;
 }
 
-/* BARRE DE NAVIGATION */
-
+/* HEADER */
+header{
+    text-align: center;
+    border:1px solid blue;
+    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
+    padding:1rem 0;
+}
 
 
 
