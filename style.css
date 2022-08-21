@@ -10,7 +10,7 @@
     --cyan:#99E2D0;
 }
 
-body{
+body, h2{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -35,11 +35,27 @@ a{
 
 /* HEADER */
 header{
-    text-align: center;
-    border:1px solid blue;
+    display:flex;
+    justify-content: center;
     -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
-    padding:1rem 0;
+    font-size:1.5rem;
+    position: relative;
+    /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
+    
 }
+.header_location{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+    font-size:1.2rem;
+    font-weight: bold;
+    color:#454444;
+    background-color: #f2f2f2;
+}
+
+/* RESEARCH */
+
 
 
 
