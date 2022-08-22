@@ -1,0 +1,20 @@
+/* BUTTONS */
+button{
+    border:none;
+    border-radius: 2rem;
+    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
+    height:4rem;
+    width: 18rem;
+    color:white;
+    font-size:1.2rem;
+    font-weight: 400;
+    padding:1rem 2rem;
+    background-image: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+}
+
+button:hover{
+    transform: scale(1.02);
+    transition:all 100ms;
+    opacity:0.8;
+    cursor:pointer;
+}

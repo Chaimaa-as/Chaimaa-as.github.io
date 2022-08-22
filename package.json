@@ -4,7 +4,7 @@
   "description": "OC_Projet 3_Ohmyfood",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch  style.scss style.css"
+    "sass": "sass --watch style.scss style.css"
   },
   "repository": {
     "type": "git",
