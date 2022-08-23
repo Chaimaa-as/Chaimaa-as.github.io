@@ -101,7 +101,7 @@ header{
     gap:0.6rem;
 }
 
-li::before{
+.research_steps li::before{
     counter-increment: section;
     content: counters(section,".") " ";
     /* etape2 : On incrémente le compteur section */
