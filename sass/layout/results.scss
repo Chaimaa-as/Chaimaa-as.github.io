@@ -17,11 +17,13 @@
     border-radius:1.3rem;
     -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
     min-width:40%;
+
     @media (max-width:760px){
         background-color: red;
         width:100%;
     }
 }
+
 
 
 .result_card img{
@@ -37,6 +39,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.card_content p{
+    margin-top:0.2rem;
 }
 
 

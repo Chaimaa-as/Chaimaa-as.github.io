@@ -20,11 +20,7 @@ h3 {
 
 h2 {
   margin-bottom: 1rem;
-  padding: 2rem;
-}
-
-p {
-  margin-top: 0.2rem;
+  padding-top: 2rem;
 }
 
 body {
@@ -39,8 +35,12 @@ h2 {
   font-family: "Roboto", sans-serif;
 }
 
+footer h2 {
+  font-family: "Shrikhand", cursive;
+}
+
 h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 #logo {
@@ -198,13 +198,39 @@ a {
   align-items: center;
 }
 
+.card_content p {
+  margin-top: 0.2rem;
+}
+
 /* FOOTER */
 footer {
   padding: 1rem;
+  background-color: #353535;
 }
 
 footer li {
   list-style: none;
+  color: white;
+  padding-bottom: 0.3rem;
+}
+
+.footer-bloc {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer_text p {
+  margin: 0rem;
+}
+
+.footer_icon {
+  width: 0.6rem;
+}
+
+footer h2 {
+  padding: 0;
+  font-weight: 300;
 }
 
 :root {
