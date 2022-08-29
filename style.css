@@ -89,7 +89,7 @@ header {
   gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #454444;
+  color: #353535;
   background-color: #f2f2f2;
 }
 
@@ -140,7 +140,7 @@ a {
   border-radius: 50%;
   height: 1rem;
   width: 1rem;
-  background-color: var(--purple);
+  background-color: #9356DC;
   color: white;
   padding: 0.4rem;
   margin-left: -1.5rem;
@@ -149,7 +149,7 @@ a {
 }
 
 .research_steps i {
-  color: #595959;
+  color: #353535;
 }
 
 .research_steps .fa-solid {
@@ -178,7 +178,6 @@ a {
 }
 @media (max-width: 760px) {
   .result_card {
-    background-color: red;
     width: 100%;
   }
 }
@@ -231,12 +230,6 @@ footer li {
 footer h2 {
   padding: 0;
   font-weight: 300;
-}
-
-:root {
-  --purple:#9356DC;
-  --pink:#FF79DA;
-  --cyan:#99E2D0;
 }
 
 /*# sourceMappingURL=style.css.map */

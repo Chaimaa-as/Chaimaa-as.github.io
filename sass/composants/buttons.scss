@@ -2,7 +2,7 @@
 button{
     border:none;
     border-radius: 2rem;
-    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
+    @include card-shadow;
     height:4rem;
     width: 18rem;
     color:white;

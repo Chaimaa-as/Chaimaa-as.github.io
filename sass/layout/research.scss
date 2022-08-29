@@ -12,7 +12,7 @@
     list-style-type: none;
     background-color: #F2F2F2;
     border-radius:1.8rem;
-    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
+    @include card-shadow;
     padding:1rem;
     flex-grow:1;
     display: flex;
@@ -30,7 +30,7 @@
     border-radius: 50%;
     height:1rem;
     width:1rem;
-    background-color: var(--purple);
+    background-color:$primary-color;
     color:white;
     padding:0.4rem;
     margin-left:-1.5rem;
@@ -39,7 +39,7 @@
 }
 
 .research_steps i{
-    color:#595959;
+    color:$dark-grey;
 }
 
 .research_steps .fa-solid{

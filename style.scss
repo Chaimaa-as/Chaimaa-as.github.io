@@ -1,6 +1,7 @@
 @import "sass/base/general";
+@import "sass/utils/variables.scss";
+@import "sass/utils/mixin.scss";
 @import "sass/base/fonts";
-@import "sass/base/size";
 @import "sass/composants/buttons";
 @import "sass/layout/header";
 @import "sass/layout/main";
@@ -10,18 +11,9 @@
 @import "sass/layout/footer";
 
 
-:root{
-    --purple:#9356DC;
-    --pink:#FF79DA;
-    --cyan:#99E2D0;
-}
 
-@mixin card-shadow{
-    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
-}
 
-$purple:#9356DC;
-$pink:#FF79DA;
-$cyan:#99E2D0;
-$light-grey:#f2f2f2;
-$dark-grey:#353535;
+
+
+
+
