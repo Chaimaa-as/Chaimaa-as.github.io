@@ -186,6 +186,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.2rem;
 }
 
 .result_card {
@@ -193,6 +194,7 @@ a {
   border-radius: 1.3rem;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
   min-width: 40%;
+  position: relative;
 }
 @media (max-width: 760px) {
   .result_card {
@@ -211,12 +213,54 @@ a {
   padding: 0.2rem 1rem;
   text-overflow: ellipsis;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
-
-.card_content p {
+.result-card-content p {
   margin-top: 0.2rem;
+}
+.result-card-content::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: translate(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.result-card-content::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: translate(-50%);
+  color: transparent;
+  background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.result-card-content:hover::after {
+  opacity: 1;
 }
 
 /* FOOTER */
