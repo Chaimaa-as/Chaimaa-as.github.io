@@ -1,0 +1,124 @@
+nav{
+    margin-top:1rem;
+    margin-bottom:0.6rem;
+}
+
+.restaurant-pic img{
+    display:block;
+    width:100%;
+    height:40vh;
+    object-fit: cover;
+}
+.restaurant-container{
+    border:1px solid red;
+}
+
+
+#logo{
+text-align: center;
+}
+
+.restaurant-title{
+    padding-left:0.4rem;
+    position:relative;
+
+}
+
+.restaurant-container{
+    background-color: $light-grey;
+    padding: 3rem 2rem;
+    border-radius:2rem;
+    & h2{
+        text-transform: uppercase;
+        font-weight:200;
+        color:$dark-grey;
+    }
+}
+.restaurant h1{
+    &::before{
+        display:inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 400; 
+        content:"\f004";
+        font-size:2rem;
+        position:absolute;
+        right:1rem;
+        transform:translate(-50%);
+        color:inherit;
+        background-clip:text;
+        -webkit-background-clip: text;
+        opacity:1;
+        transition: all 200ms ease-in-out;   
+        }
+        &::after{
+            display:inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            content:"\f004";
+            font-size:2rem;
+            position:absolute;
+            right:1rem;
+            transform:translate(-50%);
+            color:transparent;
+            background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+            background-clip:text;
+            -webkit-background-clip: text;
+            opacity:0;
+            transition: all 200ms ease-in-out;    
+        }
+        &:hover::after{
+            opacity:1;
+        }
+}
+.restaurant_button{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.starters_cards, .main-courses_cards, .deserts_cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:1rem;
+}
+
+
+.starter_card, .main-course_card, .desert_card{
+    background-color: white;
+    padding:0.8rem;
+    border-radius:1rem;
+    
+    min-width: 40%;
+
+    @include card-shadow;
+
+}
+
+.starter_content, .main-course_content, .desert_content{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:0.5rem;
+    & p{
+        margin-top:0.2rem;
+        margin-bottom: 0.2rem;
+        text-overflow: ellipsis;
+    }
+    & span{
+        font-weight: bold;
+    }
+}
+
+@media (max-width:$breakpoint-mobile){
+    .starter_card, .main-course_card, .desert_card{
+        width:100%;
+    }
+}

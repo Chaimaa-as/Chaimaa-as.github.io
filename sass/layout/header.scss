@@ -1,13 +1,15 @@
 /* HEADER */
-header{
-    display:flex;
-    justify-content: center;
+.main-page{
+    padding-top:1rem;
+    padding-bottom:0.4rem;
+    text-align: center;
     @include card-shadow;
-    font-size:1.5rem;
     position: relative;
-    /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
+    /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */    
 }
-.header_location{
+
+
+.header__location{
     display:flex;
     justify-content: center;
     align-items: center;

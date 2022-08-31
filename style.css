@@ -9,9 +9,9 @@ html {
 }
 
 body {
-  max-width: 100%;
+  max-width: 1200px;
   /*mettre plutot width en 100%*/
-  margin: auto;
+  margin: 0 auto;
 }
 
 h3 {
@@ -43,14 +43,6 @@ h2 {
   font-size: 1.6rem;
 }
 
-#logo {
-  font-size: 0.2rem;
-}
-
-.card_heart i {
-  font-size: 2rem;
-}
-
 /* BUTTONS */
 button {
   border: none;
@@ -73,16 +65,16 @@ button:hover {
 }
 
 /* HEADER */
-header {
-  display: flex;
-  justify-content: center;
+.main-page {
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+  text-align: center;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
-  font-size: 1.5rem;
   position: relative;
   /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
 }
 
-.header_location {
+.header__location {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,20 +98,20 @@ a {
   text-align: center;
 }
 
-.intro_text p {
+.intro__text p {
   font-size: 1.3rem;
   font-weight: 350;
 }
 
 /* RESEARCH SECTION */
-.research_steps ol {
+.research__steps ol {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   counter-reset: section; /* etape1 : On initialise le compteur à 0 */
 }
 
-.research_steps li {
+.research__steps li {
   list-style-type: none;
   background-color: #F2F2F2;
   border-radius: 1.8rem;
@@ -131,7 +123,7 @@ a {
   gap: 0.6rem;
 }
 
-.research_steps li::before {
+.research__steps li::before {
   counter-increment: section;
   content: counters(section, ".") " ";
   /* etape2 : On incrémente le compteur section */
@@ -148,11 +140,11 @@ a {
   justify-content: center;
 }
 
-.research_steps i {
+.research__steps i {
   color: #353535;
 }
 
-.research_steps .fa-solid {
+.research__steps .fa-solid {
   margin-right: 0.5rem;
 }
 
@@ -170,35 +162,96 @@ a {
   padding: 1rem;
 }
 
-.result_card {
+.new {
+  position: relative;
+}
+.new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 6rem;
+  color: green;
+  background-color: #99E2D0;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+}
+
+.result-card {
   background-color: white;
   border-radius: 1.3rem;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
   min-width: 40%;
+  position: relative;
 }
 @media (max-width: 760px) {
-  .result_card {
+  .result-card {
     width: 100%;
   }
 }
 
-.result_card img {
+.result-card img {
   width: 100%;
   height: 10rem;
   border-radius: 1.3rem 1.3rem 0rem 0rem;
   object-fit: cover;
 }
 
-.result-card-content {
+.result-card__content {
   padding: 0.2rem 1rem;
   text-overflow: ellipsis;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
-
-.card_content p {
+.result-card__content p {
   margin-top: 0.2rem;
+}
+.result-card__content::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: translate(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.result-card__content::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: translate(-50%);
+  color: transparent;
+  background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.result-card__content:hover::after {
+  opacity: 1;
 }
 
 /* FOOTER */
@@ -230,6 +283,126 @@ footer li {
 footer h2 {
   padding: 0;
   font-weight: 300;
+}
+
+nav {
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.restaurant-pic img {
+  display: block;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.restaurant-container {
+  border: 1px solid red;
+}
+
+#logo {
+  text-align: center;
+}
+
+.restaurant-title {
+  padding-left: 0.4rem;
+  position: relative;
+}
+
+.restaurant-container {
+  background-color: #f2f2f2;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+}
+.restaurant-container h2 {
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #353535;
+}
+
+.restaurant h1::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: translate(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.restaurant h1::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: translate(-50%);
+  color: transparent;
+  background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.restaurant h1:hover::after {
+  opacity: 1;
+}
+
+.restaurant_button {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.starters_cards, .main-courses_cards, .deserts_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.starter_card, .main-course_card, .desert_card {
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  min-width: 40%;
+  -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
+}
+
+.starter_content, .main-course_content, .desert_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.starter_content p, .main-course_content p, .desert_content p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  text-overflow: ellipsis;
+}
+.starter_content span, .main-course_content span, .desert_content span {
+  font-weight: bold;
+}
+
+@media (max-width: 720px) {
+  .starter_card, .main-course_card, .desert_card {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

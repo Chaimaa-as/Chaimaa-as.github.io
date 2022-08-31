@@ -1,6 +1,6 @@
 /* RESEARCH SECTION */
 
-.research_steps ol{
+.research__steps ol{
     display:flex;
     flex-wrap: wrap;
     gap:1rem;
@@ -8,7 +8,7 @@
     counter-reset: section; /* etape1 : On initialise le compteur à 0 */
 }
 
-.research_steps li{
+.research__steps li{
     list-style-type: none;
     background-color: #F2F2F2;
     border-radius:1.8rem;
@@ -20,7 +20,7 @@
     gap:0.6rem;
 }
 
-.research_steps li::before{
+.research__steps li::before{
     counter-increment: section;
     content: counters(section,".") " ";
     /* etape2 : On incrémente le compteur section */
@@ -38,10 +38,10 @@
     justify-content: center;
 }
 
-.research_steps i{
+.research__steps i{
     color:$dark-grey;
 }
 
-.research_steps .fa-solid{
+.research__steps .fa-solid{
     margin-right:0.5rem;
 }
