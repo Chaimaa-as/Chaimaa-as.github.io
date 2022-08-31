@@ -122,7 +122,6 @@ a {
   align-items: center;
   gap: 0.6rem;
 }
-
 .research__steps li::before {
   counter-increment: section;
   content: counters(section, ".") " ";
@@ -187,12 +186,6 @@ a {
   min-width: 40%;
   position: relative;
 }
-@media (max-width: 760px) {
-  .result-card {
-    width: 100%;
-  }
-}
-
 .result-card img {
   width: 100%;
   height: 10rem;

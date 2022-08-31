@@ -4,7 +4,6 @@
     display:flex;
     flex-wrap: wrap;
     gap:1rem;
-
     counter-reset: section; /* etape1 : On initialise le compteur à 0 */
 }
 
@@ -18,30 +17,30 @@
     display: flex;
     align-items: center;
     gap:0.6rem;
+    &::before{
+        counter-increment: section;
+        content: counters(section,".") " ";
+        /* etape2 : On incrémente le compteur section */
+        /* etape 3 : On affiche le compteur*/
+
+        border:1px solid white;
+        border-radius: 50%;
+        height:1rem;
+        width:1rem;
+        background-color:$primary-color;
+        color:white;
+        padding:0.4rem;
+        margin-left:-1.5rem;
+        display:flex;
+        justify-content: center;
+    }
 }
 
-.research__steps li::before{
-    counter-increment: section;
-    content: counters(section,".") " ";
-    /* etape2 : On incrémente le compteur section */
-    /* etape 3 : On affiche le compteur*/
-
-    border:1px solid white;
-    border-radius: 50%;
-    height:1rem;
-    width:1rem;
-    background-color:$primary-color;
-    color:white;
-    padding:0.4rem;
-    margin-left:-1.5rem;
-    display:flex;
-    justify-content: center;
-}
 
 .research__steps i{
     color:$dark-grey;
 }
 
-.research__steps .fa-solid{
+.research__steps .fa-solid{ 
     margin-right:0.5rem;
 }
