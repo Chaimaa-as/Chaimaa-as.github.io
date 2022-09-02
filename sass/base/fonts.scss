@@ -6,12 +6,13 @@ h1{
 }
 h2{
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.6rem;
 }
 footer h2{
     font-family: 'Shrikhand', cursive;
 }
-h2{
-    font-size: 1.6rem;
-}
+
 
 

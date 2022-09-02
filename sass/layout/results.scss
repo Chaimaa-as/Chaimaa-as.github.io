@@ -12,8 +12,9 @@
     padding:1rem;
 }
 
-.new{
+.result-card--new{
     position: relative;
+    display:block;
         &::before{
         content:"Nouveau";
         position: absolute;

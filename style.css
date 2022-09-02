@@ -33,14 +33,13 @@ h1 {
 
 h2 {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.6rem;
 }
 
 footer h2 {
   font-family: "Shrikhand", cursive;
-}
-
-h2 {
-  font-size: 1.6rem;
 }
 
 /* BUTTONS */
@@ -161,10 +160,11 @@ a {
   padding: 1rem;
 }
 
-.new {
+.result-card--new {
   position: relative;
+  display: block;
 }
-.new::before {
+.result-card--new::before {
   content: "Nouveau";
   position: absolute;
   height: 2rem;
@@ -281,6 +281,26 @@ footer h2 {
 nav {
   margin-top: 1rem;
   margin-bottom: 0.6rem;
+  position: relative;
+  text-align: center;
+}
+nav ::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: --fa-font-regular;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  transform: translateY(-50%);
+  width: 1.25em;
+  text-align: center;
+  width: 4rem;
+  height: 1rem;
+  font-size: 2rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f060";
 }
 
 .restaurant-pic img {
@@ -288,32 +308,40 @@ nav {
   width: 100%;
   height: 40vh;
   object-fit: cover;
-}
-
-.restaurant-container {
-  border: 1px solid red;
-}
-
-#logo {
-  text-align: center;
-}
-
-.restaurant-title {
-  padding-left: 0.4rem;
   position: relative;
+  z-index: -1;
 }
 
 .restaurant-container {
+  margin-top: -2rem;
+  z-index: 1;
   background-color: #f2f2f2;
   padding: 3rem 2rem;
-  border-radius: 2rem;
+  border-radius: 2rem 2rem 0rem 0rem;
+  width: 100%;
+  margin-bottom: 0rem;
 }
 .restaurant-container h2 {
   text-transform: uppercase;
   font-weight: 200;
   color: #353535;
+  font-size: 1.3rem;
+}
+.restaurant-container h3 {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.restaurant-container p {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
+.restaurant h1 {
+  padding-left: 0.4rem;
+  position: relative;
+}
 .restaurant h1::before {
   display: inline-block;
   font-style: normal;
@@ -357,43 +385,102 @@ nav {
   opacity: 1;
 }
 
+.starters h2::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  background-color: #99E2D0;
+}
+
+.main-courses h2::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  background-color: #99E2D0;
+}
+
+.deserts h2::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  background-color: #99E2D0;
+}
+
 .restaurant_button {
   margin-top: 3rem;
   text-align: center;
 }
 
-.starters_cards, .main-courses_cards, .deserts_cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-.starter_card, .main-course_card, .desert_card {
+.starter_card,
+.main-course_card,
+.desert_card {
   background-color: white;
-  padding: 0.8rem;
   border-radius: 1rem;
-  min-width: 40%;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
+  display: flex;
+  overflow: hidden;
+}
+.starter_card:hover .starter--check,
+.main-course_card:hover .starter--check,
+.desert_card:hover .starter--check {
+  margin-right: 0;
 }
 
-.starter_content, .main-course_content, .desert_content {
+.starter--check,
+.main-course--check,
+.desert--check {
   display: flex;
-  justify-content: space-between;
+  width: 4rem;
+  color: #99E2D0;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  background-color: #99E2D0;
+  border-radius: 0rem 1rem 1rem 0rem;
+  margin-right: -4rem;
 }
-.starter_content p, .main-course_content p, .desert_content p {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
-  text-overflow: ellipsis;
+
+.starter_content {
+  padding: 1rem;
 }
-.starter_content span, .main-course_content span, .desert_content span {
+.starter_content h3, .starter_content p {
+  padding: 0;
+  margin: 0;
+}
+
+.starter_price,
+.main-course_price,
+.desert_price {
+  font-size: 0.9rem;
+  margin-left: auto;
   font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.starter--check i,
+.main-course--check i,
+.desert--check i {
+  border-radius: 50%;
+  color: #99E2D0;
+  background-color: white;
+  width: 1.1rem;
+  display: flex;
+  justify-content: center;
+}
+.starter--check i .fa-solid,
+.main-course--check i .fa-solid,
+.desert--check i .fa-solid {
+  font-size: 0.8rem;
 }
 
 @media (max-width: 720px) {
-  .starter_card, .main-course_card, .desert_card {
+  .starter_card,
+.main-course_card,
+.desert_card {
     width: 100%;
   }
 }
