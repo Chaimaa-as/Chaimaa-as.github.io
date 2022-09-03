@@ -157,7 +157,26 @@ nav{
     @include card-shadow;
     display:flex;
     overflow: hidden;
-    &:hover .starter--check{
+
+
+    // transition:all 2000ms;
+
+    cursor:pointer;
+
+    &:hover 
+        .starter--check{
+            margin-right:0;
+        }
+        .i{
+            transform:scale(1.2);
+        }
+
+    &:hover 
+    .main-course--check{
+        margin-right:0;
+    }
+    &:hover 
+    .desert--check{
         margin-right:0;
     }
 }
@@ -174,13 +193,14 @@ nav{
     background-color: $tertiary-color;
     border-radius: 0rem 1rem 1rem 0rem;
     margin-right:-4rem;
+    transition:all 200ms; 
 }
 
 
-.starter_content{
+.starter_content,
+.main-course_content,
+.desert_content{
     padding:1rem;
-    // display:flex;
-    // flex-direction: column;
     & h3, & p{
         padding:0;
         margin:0;
@@ -198,8 +218,6 @@ nav{
     padding:1rem;
 }
 
-
-
 .starter--check i,
 .main-course--check i,
 .desert--check i{
@@ -209,13 +227,25 @@ nav{
     width:1.1rem;
     display: flex;
     justify-content: center;
-    & .fa-solid{
-        font-size:0.8rem;
+    transform:rotate(1turn);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    & :hover .starter--check{
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
 }
-}
-
-
-
 
 
 // MEDIA QUERIES

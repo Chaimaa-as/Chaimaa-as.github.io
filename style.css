@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.02);
+  transform: scale(1.15);
   transition: all 100ms;
   opacity: 0.8;
   cursor: pointer;
@@ -422,10 +422,26 @@ nav ::before {
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
   display: flex;
   overflow: hidden;
+  cursor: pointer;
 }
 .starter_card:hover .starter--check,
 .main-course_card:hover .starter--check,
 .desert_card:hover .starter--check {
+  margin-right: 0;
+}
+.starter_card .i,
+.main-course_card .i,
+.desert_card .i {
+  transform: scale(1.2);
+}
+.starter_card:hover .main-course--check,
+.main-course_card:hover .main-course--check,
+.desert_card:hover .main-course--check {
+  margin-right: 0;
+}
+.starter_card:hover .desert--check,
+.main-course_card:hover .desert--check,
+.desert_card:hover .desert--check {
   margin-right: 0;
 }
 
@@ -440,12 +456,19 @@ nav ::before {
   background-color: #99E2D0;
   border-radius: 0rem 1rem 1rem 0rem;
   margin-right: -4rem;
+  transition: all 200ms;
 }
 
-.starter_content {
+.starter_content,
+.main-course_content,
+.desert_content {
   padding: 1rem;
 }
-.starter_content h3, .starter_content p {
+.starter_content h3, .starter_content p,
+.main-course_content h3,
+.main-course_content p,
+.desert_content h3,
+.desert_content p {
   padding: 0;
   margin: 0;
 }
@@ -470,11 +493,26 @@ nav ::before {
   width: 1.1rem;
   display: flex;
   justify-content: center;
+  transform: rotate(1turn);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
 }
-.starter--check i .fa-solid,
-.main-course--check i .fa-solid,
-.desert--check i .fa-solid {
-  font-size: 0.8rem;
+.starter--check i :hover .starter--check,
+.main-course--check i :hover .starter--check,
+.desert--check i :hover .starter--check {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transform: rotate(1turn);
+  -moz-transform: rotate(1turn);
+  -o-transform: rotate(1turn);
+  -ms-transform: rotate(1turn);
+  transform: rotate(1turn);
 }
 
 @media (max-width: 720px) {

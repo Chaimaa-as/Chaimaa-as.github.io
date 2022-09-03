@@ -13,8 +13,12 @@ button{
 }
 
 button:hover{
-    transform: scale(1.02);
+    transform: scale(1.15);
     transition:all 100ms;
     opacity:0.8;
     cursor:pointer;
 }
+
+// faire varier en fonction de RGBA (alpha 0 pour transparente)
+// $cd-btn-start: rgba(1, 28, 55, 0);
+// $cd-btn-end: rgba(1, 28, 55, 1);
