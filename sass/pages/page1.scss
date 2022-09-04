@@ -141,69 +141,23 @@ nav{
 .starters_cards,
 .main-courses_cards,
 .deserts_cards{
-    // display:flex;
-    // justify-content: center;
-    // gap:1rem;
-    // flex-wrap: wrap;
-}
-
-
-
-.starter_card, 
-.main-course_card, 
-.desert_card{
-    background-color: white;
-    border-radius:1rem;
-    @include card-shadow;
-    display:flex;
-    overflow: hidden;
-
-
-    // transition:all 2000ms;
-
-    cursor:pointer;
-
-    &:hover 
-        .starter--check{
-            margin-right:0;
-        }
-        .i{
-            transform:scale(1.2);
-        }
-
-    &:hover 
-    .main-course--check{
-        margin-right:0;
-    }
-    &:hover 
-    .desert--check{
-        margin-right:0;
-    }
-}
-
-.starter--check,
-.main-course--check,
-.desert--check
-{
     display: flex;
-    width: 4rem;
-    color: #99E2D0;
-    justify-content: center;
-    align-items: center;
-    background-color: $tertiary-color;
-    border-radius: 0rem 1rem 1rem 0rem;
-    margin-right:-4rem;
-    transition:all 200ms; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:0.8rem;
+    animation:items-loading 3s ease-in;
 }
-
 
 .starter_content,
 .main-course_content,
 .desert_content{
     padding:1rem;
+    text-overflow: ellipsis;
+
     & h3, & p{
         padding:0;
         margin:0;
+   
     }
 }
 
@@ -218,35 +172,58 @@ nav{
     padding:1rem;
 }
 
-.starter--check i,
-.main-course--check i,
-.desert--check i{
-    border-radius: 50%;
-    color: $tertiary-color;
+.starter_card, 
+.main-course_card, 
+.desert_card{
     background-color: white;
-    width:1.1rem;
-    display: flex;
-    justify-content: center;
-    transform:rotate(1turn);
-    transition: 1s;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
-    & :hover .starter--check{
-        transition: 1s;
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        -ms-transition: 1s;
-        -o-transition: 1s;
-        -webkit-transform: rotate(1turn);
-        -moz-transform: rotate(1turn);
-        -o-transform: rotate(1turn);
-        -ms-transform: rotate(1turn);
-        transform: rotate(1turn);
+    border-radius:1rem;
+    @include card-shadow;
+    display:flex;
+    cursor:pointer;
+    box-sizing:border-box;
+    overflow:hidden;
+
+    &:hover 
+        .starter--check{
+            margin-right:0;
+            & i{
+                color:red;
+                transform: rotate(1turn);
+                transition: all 500ms;
+ 
+            }
+        }
+    &:hover 
+    .main-course--check{
+        margin-right:0;
+    }
+    &:hover 
+    .desert--check{
+        margin-right:0;
     }
 }
 
+.starter--check,
+.main-course--check,
+.desert--check{
+    display: flex;
+    width: 4rem;
+    color: #99E2D0;
+    justify-content: center;
+    align-items: center;
+    background-color: $tertiary-color;
+    border-radius: 0rem 1rem 1rem 0rem;
+    margin-right:-4rem;
+    overflow: hidden;
+    & i{
+        border-radius: 50%;
+        color: $tertiary-color;
+        background-color: white;
+        width:1.1rem;
+        display: flex;
+        justify-content: center;
+    }
+}
 
 // MEDIA QUERIES
 @media (max-width:$breakpoint-mobile){
@@ -255,4 +232,9 @@ nav{
     .desert_card{
         width:100%;
     }
+}
+
+@keyframes items-loading{
+    0%{transform:scale(0)}
+    100%{transform:scale(1)}
 }

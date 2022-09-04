@@ -414,6 +414,42 @@ nav ::before {
   text-align: center;
 }
 
+.starters_cards,
+.main-courses_cards,
+.deserts_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+  animation: items-loading 3s ease-in;
+}
+
+.starter_content,
+.main-course_content,
+.desert_content {
+  padding: 1rem;
+  text-overflow: ellipsis;
+}
+.starter_content h3, .starter_content p,
+.main-course_content h3,
+.main-course_content p,
+.desert_content h3,
+.desert_content p {
+  padding: 0;
+  margin: 0;
+}
+
+.starter_price,
+.main-course_price,
+.desert_price {
+  font-size: 0.9rem;
+  margin-left: auto;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
 .starter_card,
 .main-course_card,
 .desert_card {
@@ -421,18 +457,21 @@ nav ::before {
   border-radius: 1rem;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
   display: flex;
-  overflow: hidden;
   cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .starter_card:hover .starter--check,
 .main-course_card:hover .starter--check,
 .desert_card:hover .starter--check {
   margin-right: 0;
 }
-.starter_card .i,
-.main-course_card .i,
-.desert_card .i {
-  transform: scale(1.2);
+.starter_card:hover .starter--check i,
+.main-course_card:hover .starter--check i,
+.desert_card:hover .starter--check i {
+  color: red;
+  transform: rotate(1turn);
+  transition: all 500ms;
 }
 .starter_card:hover .main-course--check,
 .main-course_card:hover .main-course--check,
@@ -456,34 +495,8 @@ nav ::before {
   background-color: #99E2D0;
   border-radius: 0rem 1rem 1rem 0rem;
   margin-right: -4rem;
-  transition: all 200ms;
+  overflow: hidden;
 }
-
-.starter_content,
-.main-course_content,
-.desert_content {
-  padding: 1rem;
-}
-.starter_content h3, .starter_content p,
-.main-course_content h3,
-.main-course_content p,
-.desert_content h3,
-.desert_content p {
-  padding: 0;
-  margin: 0;
-}
-
-.starter_price,
-.main-course_price,
-.desert_price {
-  font-size: 0.9rem;
-  margin-left: auto;
-  font-weight: bold;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-}
-
 .starter--check i,
 .main-course--check i,
 .desert--check i {
@@ -493,26 +506,6 @@ nav ::before {
   width: 1.1rem;
   display: flex;
   justify-content: center;
-  transform: rotate(1turn);
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-}
-.starter--check i :hover .starter--check,
-.main-course--check i :hover .starter--check,
-.desert--check i :hover .starter--check {
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  -webkit-transform: rotate(1turn);
-  -moz-transform: rotate(1turn);
-  -o-transform: rotate(1turn);
-  -ms-transform: rotate(1turn);
-  transform: rotate(1turn);
 }
 
 @media (max-width: 720px) {
@@ -520,6 +513,14 @@ nav ::before {
 .main-course_card,
 .desert_card {
     width: 100%;
+  }
+}
+@keyframes items-loading {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
