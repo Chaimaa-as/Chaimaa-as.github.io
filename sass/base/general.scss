@@ -1,0 +1,21 @@
+/* GENERAL */
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    max-width: 1200px;
+    /*mettre plutot width en 100%*/
+    margin:0 auto;
+}
+
+h3{
+    margin:0;
+}
+h2{
+    margin-bottom: 1rem;
+    padding-top:2rem;
+}

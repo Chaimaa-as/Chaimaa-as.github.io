@@ -1,0 +1,24 @@
+/* BUTTONS */
+button{
+    border:none;
+    border-radius: 2rem;
+    @include card-shadow;
+    height:4rem;
+    width: 18rem;
+    color:white;
+    font-size:1.2rem;
+    font-weight: 400;
+    padding:1rem 2rem;
+    background: rgb(255,121,217);
+    background-image: linear-gradient(to right bottom, rgba(255,121,217,1) 0%, rgba(147,86,220,1) 100%);
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition:all 200ms ease-in;
+    background: rgb(255,121,217);
+    background-image: linear-gradient(to right bottom, rgba(255,121,217,0.5) 0%, rgba(147,86,220,0.5) 100%);
+    cursor:pointer;
+    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
+}
+

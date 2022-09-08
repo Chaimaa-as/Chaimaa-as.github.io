@@ -1,0 +1,31 @@
+/* FOOTER */
+footer{
+    padding:1rem;
+    background-color:$dark-grey;
+    z-index:-1;
+    border-radius:2rem 2rem 0rem 0rem;
+}  
+.main-footer{
+    border-radius:0;
+}
+footer li{
+    list-style: none;
+    color:white;
+    padding-bottom:0.3rem;
+}
+
+.footer-bloc{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+.footer_text p{
+    margin:0rem;
+}
+.footer_icon{
+    width:0.6rem;
+}
+footer h2{
+    padding:0;
+    font-weight: 300;
+}

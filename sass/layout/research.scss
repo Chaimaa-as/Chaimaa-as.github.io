@@ -1,0 +1,57 @@
+/* RESEARCH SECTION */
+.research{
+    margin:2rem;
+}
+.research__steps ol{
+    display:flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    counter-reset: section; /* etape1 : On initialise le compteur à 0 */
+    padding-left:0rem;
+
+}
+ol li{
+    transition:all 100ms ease-in;
+    &:hover{
+        transform:scale(1.1);
+        background: rgb(242,242,242);
+background-image: linear-gradient(to right bottom, rgba(242,242,242,1) 0%, rgba(147,86,220,0.2) 100%);
+    }
+}
+.research__steps li{
+    list-style-type: none;
+    background-color: #F2F2F2;
+    border-radius:1.8rem;
+    @include card-shadow;
+    padding:1rem;
+    flex-grow:1;
+    display: flex;
+    align-items: center;
+    gap:0.6rem;
+    &::before{
+        counter-increment: section;
+        content: counters(section,".") " ";
+        /* etape2 : On incrémente le compteur section */
+        /* etape 3 : On affiche le compteur*/
+
+        border:1px solid white;
+        border-radius: 50%;
+        height:1rem;
+        width:1rem;
+        background-color:$primary-color;
+        color:white;
+        padding:0.4rem;
+        margin-left:-1.5rem;
+        display:flex;
+        justify-content: center;
+    }
+}
+
+
+.research__steps i{
+    color:$dark-grey;
+}
+
+.research__steps .fa-solid{ 
+    margin-right:0.5rem;
+}

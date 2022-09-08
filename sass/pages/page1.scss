@@ -1,0 +1,318 @@
+// HEADER
+nav{
+    margin-top:1rem;
+    margin-bottom:0.6rem;
+    position: relative;
+    text-align:center;
+    & ::before{
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font:--fa-font-regular;
+        position: absolute;
+        left: 0;
+        top: 10%;
+        transform: translateY(-50%);
+        width: 1.25em;
+        text-align: center;
+        width:4rem;
+        height:1rem;
+        font-size:2rem;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        content:"\f060";
+    }
+}
+
+.restaurant-pic img{
+    display:block;
+    width:100%;
+    height:50vh;
+    object-fit: cover;
+    position:relative;
+    z-index:-1;
+}
+
+
+// SECTION_GLOBAL CONTAINER
+.restaurant-container{
+    margin-top:-2rem;
+    z-index:1;
+    background-color: $light-grey;
+    padding: 3rem 2rem;
+    border-radius:2rem 2rem 0rem 0rem;
+    width:100%;
+    margin-bottom:-2rem;
+
+    & h2{
+        text-transform: uppercase;
+        font-weight:200;
+        color:$dark-grey;
+        font-size: 1.3rem;
+    }
+    & h3{
+        font-size:1rem;
+        margin-top:0.3rem;
+        margin-bottom: 0.3rem;
+    }
+    & p{
+        font-size:0.9rem;
+        margin-top:0.3rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+.restaurant h1{
+    padding-left:0.4rem;
+    position:relative;
+    display:flex;
+    align-items: center;
+    gap:0.8rem;
+    font-size:1.6rem;
+
+    &::before{
+        display:inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 400; 
+        content:"\f004";
+        font-size:1.4rem;
+        position:absolute;
+        right:0.6rem;
+        transform:translate(-50%);
+        color:inherit;
+        background-clip:text;
+        -webkit-background-clip: text;
+        opacity:1;
+        transition: all 200ms ease-in-out;   
+
+        }
+        &::after{
+            display:inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            content:"\f004";
+            font-size:1.4rem;
+            position:absolute;
+            right:0.6rem;
+            transform:translate(-50%);
+            color:transparent;
+            background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+            background-clip:text;
+            -webkit-background-clip: text;
+            opacity:0;
+            transition: all 200ms ease-in-out;    
+            }
+                &:hover::after{
+                    opacity:1;
+                }
+}
+
+    // CYAN UNDERLINE
+.starters h2::after{
+    content:"";
+    display:block;
+    width:4rem;
+    height:2px;
+    background-color: $tertiary-color;
+}
+.main-courses h2::after{
+    content:"";
+    display:block;
+    width:4rem;
+    height:2px;
+    background-color: $tertiary-color;
+}
+.deserts h2::after{
+    content:"";
+    display:block;
+    width:4rem;
+    height:2px;
+    background-color: $tertiary-color;
+}
+
+.restaurant_button{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+
+
+// CARDS
+.starters_cards,
+.main-courses_cards,
+.deserts_cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:0.8rem;
+    min-width:20%;
+
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+
+
+
+
+
+}
+.starter_content,
+.main-course_content,
+.desert_content{
+    padding:1rem;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    min-width:30%;
+    max-width:70%;
+
+    & h3, & p{
+        padding:0;
+        margin:0;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
+   
+    }
+}
+
+.starter_price,
+.main-course_price,
+.desert_price{
+    font-size:0.9rem;
+    margin-left:auto;
+    font-weight: bold;
+    display:flex;
+    align-items: flex-end;
+    padding:1rem;
+    min-width:10%;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes fade-in{
+    0%{
+        transform:translateY(50%);
+        opacity:0;
+    } 
+    // effet de fondu pultot que scale
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+.starter_card, 
+.main-course_card, 
+.desert_card{
+    background-color: white;
+    border-radius:1rem;
+    @include card-shadow;
+    display:flex;
+    cursor:pointer;
+    box-sizing:border-box;
+    margin:1rem;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    min-width:40%;
+    animation:fade-in 3s ease-in;
+    animation-fill-mode: both;
+    transition:all 1s ease-in-out;
+    @for $i from 1 through 3{
+        &:nth-child(#{$i}){
+            animation-delay: #{$i*0.5s};
+            transition:all 1s ease-in-out;
+        }
+    }
+    &:hover 
+        .starter--check{
+            margin-right:0;
+            & i{
+        
+                transform: rotate(1turn);
+                transition: all 500ms;
+ 
+            }
+        }
+    &:hover 
+    .main-course--check{
+        margin-right:0;
+    }
+    &:hover 
+    .desert--check{
+        margin-right:0;
+    }
+}
+
+.starter--check,
+.main-course--check,
+.desert--check{
+    display: flex;
+    width: 4rem;
+    color: #99E2D0;
+    justify-content: center;
+    align-items: center;
+    background-color: $tertiary-color;
+    border-radius: 0rem 1rem 1rem 0rem;
+    margin-right:-4rem;
+    overflow: hidden;
+    transition:all 500ms;
+    & i{
+        border-radius: 50%;
+        color: $tertiary-color;
+        background-color: white;
+        width:1.1rem;
+        display: flex;
+        justify-content: center;
+        transition:all 500ms ease-in-out;
+    }
+}
+
+// MEDIA QUERIES
+@media (max-width:$breakpoint-mobile){
+    .starter_card, 
+    .main-course_card, 
+    .desert_card{
+        width:100%;
+    }
+}
+
+@media(max-width:$breakpoint-min-tablet){
+    .starter_card, 
+    .main-course_card, 
+    .desert_card{
+        width:100%;
+
+    }
+}
+
+@media(max-width:$breakpoint-tablet){
+    .starter_card, 
+    .main-course_card, 
+    .desert_card{
+        min-width:40%;
+
+    }
+    footer{
+        border-radius:0;
+    }
+}
+
+
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "oc_ohmyfood",
+  "version": "1.0.0",
+  "description": "OC_Projet 3_Ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaimaa-as/Chaimaa-as.github.io.git"
+  },
+  "author": "Chaimaa Asri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chaimaa-as/Chaimaa-as.github.io/issues"
+  },
+  "homepage": "https://github.com/Chaimaa-as/Chaimaa-as.github.io#readme",
+  "dependencies": {
+    "sass": "^1.54.5"
+  }
+}
